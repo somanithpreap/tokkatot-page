@@ -1,10 +1,10 @@
 # Tokkatot Website
 
-Official website for Tokkatot - Smart Chicken Farming Automation for Cambodia.
+Official website for Tokkatot - Smart Chicken Farming Solution for Cambodia.
 
 ## About
 
-Tokkatot provides innovative IoT-based automation solutions for chicken farming in Cambodia, helping farmers increase productivity and efficiency through smart technology.
+Tokkatot provides innovative smart solutions that integrate IoT, AI and Automation for chicken farming in Cambodia, helping farmers increase productivity and efficiency through smart technology.
 
 ## Features
 
