@@ -1,0 +1,333 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+const resources = {
+  en: {
+    translation: {
+      nav: {
+        home: "Home",
+        about: "About",
+        features: "Features",
+        team: "Team",
+        contact: "Contact"
+      },
+      hero: {
+        title: "Smart Chicken Farming",
+        highlight: "Made Accessible",
+        subtitle: "Bringing IoT, AI, and automation technology to small and medium-sized farms in Cambodia",
+        exploreBtn: "Explore Features",
+        contactBtn: "Get in Touch",
+        scrollDown: "Scroll Down"
+      },
+      about: {
+        title: "Who We Are",
+        heading: "Revolutionizing Agriculture in Cambodia",
+        paragraph1: "Tokkatot is a student-led initiative born from a shared vision to transform Cambodia's agricultural technology sector. We're making smart automation accessible to small and medium-sized chicken farms across the country.",
+        paragraph2: "By leveraging IoT, AI, and automation, we provide affordable alternatives to expensive industrial-grade components. Our mission is to reduce dependency on imported agri-tech solutions and empower local farmers with cutting-edge technology.",
+        stat1Title: "Local Innovation",
+        stat1Desc: "Cambodian-made solution",
+        stat2Title: "Affordable",
+        stat2Desc: "Competitive pricing",
+        stat3Title: "Student-Led",
+        stat3Desc: "Fresh perspectives"
+      },
+      features: {
+        title: "Our Technology",
+        subtitle: "Four integrated systems working together to optimize your chicken farm",
+        feature1Title: "Climate Control",
+        feature1Desc: "Real-time temperature and humidity monitoring with automatic regulation to maintain optimal conditions for healthy chicken growth.",
+        feature1Item1: "24/7 environmental monitoring",
+        feature1Item2: "Automatic climate adjustment",
+        feature1Item3: "Alert notifications",
+        feature2Title: "Auto Feeding & Watering",
+        feature2Desc: "Automated feeding and watering systems that ensure your chickens receive proper nutrition and hydration on schedule.",
+        feature2Item1: "Programmable feeding schedules",
+        feature2Item2: "Precise portion control",
+        feature2Item3: "Water level monitoring",
+        feature3Title: "Manure Conveyor System",
+        feature3Desc: "Efficient waste management with automated manure conveyor belts, keeping the farm clean and reducing manual labor.",
+        feature3Item1: "Automated waste removal",
+        feature3Item2: "Improved farm hygiene",
+        feature3Item3: "Reduced labor costs",
+        feature4Title: "AI Disease Detection",
+        feature4Desc: "Advanced AI-powered fecal image monitoring on the conveyor belt to detect potential disease outbreaks before they spread.",
+        feature4Item1: "Real-time image analysis",
+        feature4Item2: "Early disease detection",
+        feature4Item3: "Instant farmer alerts",
+        hubTitle: "Central Hub System",
+        hubDesc: "All features are controlled through our locally-hosted central hub, accessible from your smartphone via our intuitive web dashboard. Monitor and control your entire farm operation from anywhere.",
+        hubTag1: "Local Hosting",
+        hubTag2: "Mobile Access",
+        hubTag3: "Real-time Data",
+        hubTag4: "Easy Control"
+      },
+      team: {
+        title: "Meet Our Team",
+        subtitle: "The passionate students and innovators behind Tokkatot",
+        member1Name: "Yung Sreyneang",
+        member1Role: "Co-Founder & CEO",
+        member1Bio: "Responsible for media and PR, leading executive decisions and the overall vision to transform Cambodia's agricultural technology sector.",
+        member2Name: "Preap Somanith",
+        member2Role: "Co-Founder & CTO",
+        member2Bio: "Responsible for technical decisions of the project and embedded system engineering, driving the technology backbone of Tokkatot.",
+        member3Name: "Sophea Darika",
+        member3Role: "Chief Operating Officer",
+        member3Bio: "Responsible for team operations and administrative tasks. Contributes to R&D and frontend development to support the project.",
+        member4Name: "Virak Rangsey",
+        member4Role: "Co-Founder & CFO",
+        member4Bio: "Responsible for financial budget planning and business development, ensuring sustainable growth and strategic partnerships.",
+        member5Name: "Sun Heng",
+        member5Role: "Co-Founder & AI Engineer",
+        member5Bio: "Responsible for R&D of hardware, system and features. Specializes in AI solutions and contributes to frontend development.",
+        member6Name: "Kaem Sreyneath",
+        member6Role: "Co-Founder & Embedded Systems Engineer",
+        member6Bio: "Specializes in embedded systems engineering, developing the core automation hardware that powers Tokkatot's smart solutions."
+      },
+      contact: {
+        title: "Get in Touch",
+        subtitle: "Interested in bringing Tokkatot to your farm? We'd love to hear from you!",
+        infoTitle: "Contact Information",
+        infoDesc: "Reach out to our team to learn more about Tokkatot and how we can help transform your chicken farm.",
+        email: "Email",
+        phone: "Phone (CEO: Yung Sreyneang)",
+        location: "Location",
+        locationValue: "Phnom Penh, Cambodia",
+        nameLabel: "Full Name",
+        emailLabel: "Email Address",
+        phoneLabel: "Phone Number",
+        messageLabel: "Message",
+        sendBtn: "Send Message",
+        successMsg: "Thank you for your message! We will get back to you soon."
+      },
+      footer: {
+        tagline: "Empowering Cambodian farmers with smart automation technology.",
+        quickLinks: "Quick Links",
+        followUs: "Follow Us",
+        copyright: "© 2025 Tokkatot. All rights reserved. Made with ❤️ in Cambodia."
+      }
+    }
+  },
+  km: {
+    translation: {
+      nav: {
+        home: "ទំព័រដើម",
+        about: "អំពីយើង",
+        features: "មុខងារ",
+        team: "ក្រុម",
+        contact: "ទាក់ទង"
+      },
+      hero: {
+        title: "ការចិញ្ចឹមមាន់ឆ្លាតវៃ",
+        highlight: "ងាយស្រួលប្រើប្រាស់",
+        subtitle: "នាំយក បច្ចេកវិទ្យា IoT, AI និងស្វ័យប្រវត្តិកម្ម មកកាន់កសិដ្ឋានមាន់ខ្នាតតូច និងមធ្យមនៅកម្ពុជា",
+        exploreBtn: "ស្វែងយល់មុខងារ",
+        contactBtn: "ទាក់ទងយើង",
+        scrollDown: "រំកិលចុះក្រោម"
+      },
+      about: {
+        title: "យើងជានរណា",
+        heading: "បដិវត្តកសិកម្មនៅកម្ពុជា",
+        paragraph1: "Tokkatot គឺជាគំនិតផ្តួចផ្តើមដោយសិស្សនិស្សិត ដែលកើតចេញពីទស្សនវិស័យរួមគ្នា ដើម្បីផ្លាស់ប្តូរវិស័យបច្ចេកវិទ្យាកសិកម្មរបស់កម្ពុជា។ យើងធ្វើឱ្យស្វ័យប្រវត្តិកម្មឆ្លាតវៃអាចចូលប្រើបានសម្រាប់កសិដ្ឋានមាន់ខ្នាតតូច និងមធ្យមទូទាំងប្រទេស។",
+        paragraph2: "តាមរយៈការប្រើប្រាស់ IoT, AI និងស្វ័យប្រវត្តិកម្ម យើងផ្តល់ជម្រើសតម្លៃសមរម្យជំនួសសមាសធាតុថ្លៃថ្លៃពីឧស្សាហកម្ម។ បេសកកម្មរបស់យើងគឺកាត់បន្ថយការពឹងពាក់លើដំណោះស្រាយបច្ចេកវិទ្យាកសិកម្មនាំចូល និងផ្តល់អំណាចដល់កសិករក្នុងស្រុកដោយបច្ចេកវិទ្យាទំនើប។",
+        stat1Title: "ច្នៃប្រឌិតក្នុងស្រុក",
+        stat1Desc: "ដំណោះស្រាយរបស់កម្ពុជា",
+        stat2Title: "តម្លៃសមរម្យ",
+        stat2Desc: "តម្លៃប្រកួតប្រជែង",
+        stat3Title: "ដឹកនាំដោយសិស្ស",
+        stat3Desc: "ទស្សនវិស័យថ្មី"
+      },
+      features: {
+        title: "បច្ចេកវិទ្យារបស់យើង",
+        subtitle: "ប្រព័ន្ធចំនួនបួនរួមបញ្ចូលគ្នា ដើម្បីបង្កើនប្រសិទ្ធភាពកសិដ្ឋានមាន់របស់អ្នក",
+        feature1Title: "ត្រួតពិនិត្យអាកាសធាតុ",
+        feature1Desc: "តាមដានសីតុណ្ហភាព និងសំណើមក្នុងពេលជាក់ស្តែង ជាមួយនឹងការកែតម្រូវស្វ័យប្រវត្តិ ដើម្បីរក្សាលក្ខខណ្ឌល្អប្រសើរសម្រាប់ការលូតលាស់មាន់ដែលមានសុខភាពល្អ។",
+        feature1Item1: "តាមដានបរិស្ថាន ២៤/៧",
+        feature1Item2: "ការកែតម្រូវអាកាសធាតុស្វ័យប្រវត្តិ",
+        feature1Item3: "ការជូនដំណឹងព្រមាន",
+        feature2Title: "ប្រព័ន្ធចិញ្ចឹម និងផ្តល់ទឹកស្វ័យប្រវត្តិ",
+        feature2Desc: "ប្រព័ន្ធចិញ្ចឹម និងផ្តល់ទឹកស្វ័យប្រវត្តិ ដែលធានាថាមាន់របស់អ្នកទទួលបានអាហារូបត្ថម្ភ និងទឹកត្រឹមត្រូវតាមកាលវិភាគ។",
+        feature2Item1: "កាលវិភាគចិញ្ចឹមអាចកំណត់បាន",
+        feature2Item2: "ត្រួតពិនិត្យចំនួនដ៏ច្បាស់លាស់",
+        feature2Item3: "តាមដានកម្រិតទឹក",
+        feature3Title: "ប្រព័ន្ធខ្សែក្រវ៉ាត់លាមក",
+        feature3Desc: "ការគ្រប់គ្រងសំណល់ប្រកបដោយប្រសិទ្ធភាព ជាមួយនឹងខ្សែក្រវ៉ាត់លាមកស្វ័យប្រវត្តិ រក្សាកសិដ្ឋានឱ្យស្អាត និងកាត់បន្ថយការងារដោយដៃ។",
+        feature3Item1: "ការដកសំណល់ស្វ័យប្រវត្តិ",
+        feature3Item2: "បង្កើនអនាម័យកសិដ្ឋាន",
+        feature3Item3: "កាត់បន្ថយថ្លៃដើមកម្លាំងពលកម្ម",
+        feature4Title: "ការរកឃើញជំងឺដោយ AI",
+        feature4Desc: "ការតាមដានរូបភាពលាមកដោយ AI កម្រិតខ្ពស់ នៅលើខ្សែក្រវ៉ាត់ ដើម្បីរកឃើញការផ្ទុះជំងឺមុនពេលវារាលដាល។",
+        feature4Item1: "ការវិភាគរូបភាពក្នុងពេលជាក់ស្តែង",
+        feature4Item2: "ការរកឃើញជំងឺពីដើម",
+        feature4Item3: "ការជូនដំណឹងភ្លាមៗដល់កសិករ",
+        hubTitle: "ប្រព័ន្ធមជ្ឈមណ្ឌលកណ្តាល",
+        hubDesc: "មុខងារទាំងអស់ត្រូវបានគ្រប់គ្រងតាមរយៈមជ្ឈមណ្ឌលកណ្តាលដែលបង្ហោះក្នុងស្រុករបស់យើង អាចចូលប្រើបានពីទូរស័ព្ទរបស់អ្នកតាមរយៈផ្ទាំងគ្រប់គ្រងវែបងាយស្រួលប្រើ។ តាមដាន និងគ្រប់គ្រងប្រតិបត្តិការកសិដ្ឋានទាំងមូលរបស់អ្នកពីគ្រប់ទីកន្លែង។",
+        hubTag1: "បង្ហោះក្នុងស្រុក",
+        hubTag2: "ចូលប្រើតាមទូរស័ព្ទ",
+        hubTag3: "ទិន្នន័យពេលវេលាជាក់ស្តែង",
+        hubTag4: "ងាយស្រួលគ្រប់គ្រង"
+      },
+      team: {
+        title: "ជួបក្រុមរបស់យើង",
+        subtitle: "សិស្ស និងអ្នកច្នៃប្រឌិតដែលមានចំណង់ចំណូលចិត្ត នៅពីក្រោយ Tokkatot",
+        member1Name: "Yung Sreyneang",
+        member1Role: "អ្នកសហស្ថាបនិក & នាយកប្រតិបត្តិ",
+        member1Bio: "ទទួលខុសត្រូវផ្នែកប្រព័ន្ធផ្សព្វផ្សាយ និងទំនាក់ទំនងសាធារណៈ ដឹកនាំការសម្រេចចិត្តប្រតិបត្តិការ និងទស្សនវិស័យទូទៅ។",
+        member2Name: "Preap Somanith",
+        member2Role: "អ្នកសហស្ថាបនិក & នាយកបច្ចេកវិទ្យា",
+        member2Bio: "ទទួលខុសត្រូវការសម្រេចចិត្តបច្ចេកទេសនៃគម្រោង និងវិស្វកម្មប្រព័ន្ធបង្កប់ ជំរុញបច្ចេកវិទ្យាស្នូល។",
+        member3Name: "Sophea Darika",
+        member3Role: "នាយកប្រតិបត្តិការ",
+        member3Bio: "ទទួលខុសត្រូវប្រតិបត្តិការក្រុម និងកិច្ចការរដ្ឋបាល។ ចូលរួមក្នុង R&D និងអភិវឌ្ឍន៍ផ្នែកខាងមុខ។",
+        member4Name: "Virak Rangsey",
+        member4Role: "អ្នកសហស្ថាបនិក & នាយកហិរញ្ញវត្ថុ",
+        member4Bio: "ទទួលខុសត្រូវផែនការថវិកាហិរញ្ញវត្ថុ និងការអភិវឌ្ឍន៍អាជីវកម្ម ធានាការរីកចម្រើនប្រកបដោយនិរន្តរភាព។",
+        member5Name: "Sun Heng",
+        member5Role: "អ្នកសហស្ថាបនិក & វិស្វករ AI",
+        member5Bio: "ទទួលខុសត្រូវ R&D នៃផ្នែករឹង ប្រព័ន្ធ និងមុខងារ។ ជំនាញ AI និងចូលរួមអភិវឌ្ឍន៍ផ្នែកខាងមុខ។",
+        member6Name: "Kaem Sreyneath",
+        member6Role: "អ្នកសហស្ថាបនិក & វិស្វករប្រព័ន្ធបង្កប់",
+        member6Bio: "ជំនាញវិស្វកម្មប្រព័ន្ធបង្កប់ អភិវឌ្ឍផ្នែករឹងស្វ័យប្រវត្តិកម្មស្នូលដែលផ្តល់ថាមពល Tokkatot។"
+      },
+      contact: {
+        title: "ទាក់ទងយើង",
+        subtitle: "ចាប់អារម្មណ៍នាំ Tokkatot មកកសិដ្ឋានរបស់អ្នក? យើងចង់ស្តាប់មតិពីអ្នក!",
+        infoTitle: "ព័ត៌មានទាក់ទង",
+        infoDesc: "ទាក់ទងក្រុមរបស់យើង ដើម្បីស្វែងយល់បន្ថែមអំពី Tokkatot និងរបៀបដែលយើងអាចជួយផ្លាស់ប្តូរកសិដ្ឋានមាន់របស់អ្នក។",
+        email: "អ៊ីមែល",
+        phone: "ទូរស័ព្ទ (CEO: Yung Sreyneang)",
+        location: "ទីតាំង",
+        locationValue: "ភ្នំពេញ, កម្ពុជា",
+        nameLabel: "ឈ្មោះពេញ",
+        emailLabel: "អាសយដ្ឋានអ៊ីមែល",
+        phoneLabel: "លេខទូរស័ព្ទ",
+        messageLabel: "សារ",
+        sendBtn: "ផ្ញើសារ",
+        successMsg: "សូមអរគុណសម្រាប់សាររបស់អ្នក! យើងនឹងទាក់ទងអ្នកឆាប់ៗនេះ។"
+      },
+      footer: {
+        tagline: "ផ្តល់អំណាចដល់កសិករកម្ពុជា ជាមួយនឹងបច្ចេកវិទ្យាស្វ័យប្រវត្តិកម្មឆ្លាតវៃ។",
+        quickLinks: "តំណភ្ជាប់រហ័ស",
+        followUs: "តាមដានយើង",
+        copyright: "© ២០២៥ Tokkatot។ រក្សាសិទ្ធិគ្រប់យ៉ាង។ ធ្វើឡើងដោយ ❤️ នៅកម្ពុជា។"
+      }
+    }
+  },
+  zh: {
+    translation: {
+      nav: {
+        home: "首页",
+        about: "关于我们",
+        features: "功能",
+        team: "团队",
+        contact: "联系我们"
+      },
+      hero: {
+        title: "智能养鸡",
+        highlight: "触手可及",
+        subtitle: "为柬埔寨的中小型养鸡场带来物联网、人工智能和自动化技术",
+        exploreBtn: "探索功能",
+        contactBtn: "联系我们",
+        scrollDown: "向下滚动"
+      },
+      about: {
+        title: "关于我们",
+        heading: "革新柬埔寨农业",
+        paragraph1: "Tokkatot 是一个由学生主导的项目，源于改变柬埔寨农业技术领域的共同愿景。我们让智能自动化技术惠及全国的中小型养鸡场。",
+        paragraph2: "通过利用物联网、人工智能和自动化技术，我们提供价格实惠的替代方案，替代昂贵的工业级组件。我们的使命是减少对进口农业技术解决方案的依赖，并用尖端技术赋能当地农民。",
+        stat1Title: "本地创新",
+        stat1Desc: "柬埔寨制造的解决方案",
+        stat2Title: "价格实惠",
+        stat2Desc: "具有竞争力的价格",
+        stat3Title: "学生主导",
+        stat3Desc: "新鲜视角"
+      },
+      features: {
+        title: "我们的技术",
+        subtitle: "四个集成系统协同工作，优化您的养鸡场",
+        feature1Title: "气候控制",
+        feature1Desc: "实时温度和湿度监控，自动调节以保持健康鸡生长的最佳条件。",
+        feature1Item1: "全天候环境监测",
+        feature1Item2: "自动气候调节",
+        feature1Item3: "警报通知",
+        feature2Title: "自动喂食和供水",
+        feature2Desc: "自动喂食和供水系统，确保您的鸡按时获得适当的营养和水分。",
+        feature2Item1: "可编程喂食时间表",
+        feature2Item2: "精确份量控制",
+        feature2Item3: "水位监测",
+        feature3Title: "粪便输送系统",
+        feature3Desc: "采用自动化粪便输送带的高效废物管理，保持农场清洁并减少人工劳动。",
+        feature3Item1: "自动废物清除",
+        feature3Item2: "改善农场卫生",
+        feature3Item3: "降低人工成本",
+        feature4Title: "AI疾病检测",
+        feature4Desc: "在输送带上进行先进的AI驱动粪便图像监控，在疾病传播之前检测潜在的疾病爆发。",
+        feature4Item1: "实时图像分析",
+        feature4Item2: "早期疾病检测",
+        feature4Item3: "即时农民警报",
+        hubTitle: "中央枢纽系统",
+        hubDesc: "所有功能都通过我们本地托管的中央枢纽进行控制，可通过智能手机上的直观Web仪表板访问。随时随地监控和控制整个农场运营。",
+        hubTag1: "本地托管",
+        hubTag2: "移动访问",
+        hubTag3: "实时数据",
+        hubTag4: "易于控制"
+      },
+      team: {
+        title: "认识我们的团队",
+        subtitle: "Tokkatot背后充满激情的学生和创新者",
+        member1Name: "Yung Sreyneang",
+        member1Role: "联合创始人兼首席执行官",
+        member1Bio: "负责媒体和公关，领导执行决策和整体愿景，致力于改变柬埔寨的农业技术领域。",
+        member2Name: "Preap Somanith",
+        member2Role: "联合创始人兼首席技术官",
+        member2Bio: "负责项目的技术决策和嵌入式系统工程，推动Tokkatot的技术支柱。",
+        member3Name: "Sophea Darika",
+        member3Role: "首席运营官",
+        member3Bio: "负责团队运营和行政任务。参与研发和前端开发以支持项目。",
+        member4Name: "Virak Rangsey",
+        member4Role: "联合创始人兼首席财务官",
+        member4Bio: "负责财务预算规划和业务发展，确保可持续增长和战略合作伙伴关系。",
+        member5Name: "Sun Heng",
+        member5Role: "联合创始人兼AI工程师",
+        member5Bio: "负责硬件、系统和功能的研发。专注于AI解决方案并参与前端开发。",
+        member6Name: "Kaem Sreyneath",
+        member6Role: "联合创始人兼嵌入式系统工程师",
+        member6Bio: "专注于嵌入式系统工程，开发支持Tokkatot智能解决方案的核心自动化硬件。"
+      },
+      contact: {
+        title: "联系我们",
+        subtitle: "有兴趣将Tokkatot引入您的农场？我们很乐意听取您的意见！",
+        infoTitle: "联系信息",
+        infoDesc: "联系我们的团队，了解更多关于Tokkatot以及我们如何帮助改造您的养鸡场。",
+        email: "电子邮件",
+        phone: "电话 (CEO: Yung Sreyneang)",
+        location: "位置",
+        locationValue: "金边，柬埔寨",
+        nameLabel: "全名",
+        emailLabel: "电子邮件地址",
+        phoneLabel: "电话号码",
+        messageLabel: "留言",
+        sendBtn: "发送消息",
+        successMsg: "感谢您的消息！我们会尽快与您联系。"
+      },
+      footer: {
+        tagline: "用智能自动化技术赋能柬埔寨农民。",
+        quickLinks: "快速链接",
+        followUs: "关注我们",
+        copyright: "© 2025 Tokkatot。保留所有权利。用❤️在柬埔寨制作。"
+      }
+    }
+  }
+};
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: 'en',
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false
+    }
+  });
+
+export default i18n;

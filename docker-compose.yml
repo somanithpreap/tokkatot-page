@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  tokkatot-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tokkatot-website
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      - tokkatot-network
+
+networks:
+  tokkatot-network:
+    driver: bridge
