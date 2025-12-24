@@ -5,10 +5,24 @@ services:
       dockerfile: Dockerfile
     container_name: tokkatot-website
     ports:
-      - "80:80"
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - TELEGRAM_TOPIC_ID=${TELEGRAM_TOPIC_ID}
+    env_file:
+      - .env
     restart: unless-stopped
     networks:
       - tokkatot-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/health', (res) => process.exit(res.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 3s
+      start_period: 40s
+      retries: 3
 
 networks:
   tokkatot-network:

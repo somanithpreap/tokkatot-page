@@ -12,14 +12,19 @@ const resources = {
         contact: "Contact"
       },
       hero: {
+        badge: "Smart Farming Innovation",
         title: "Smart Chicken Farming",
         highlight: "Made Accessible",
         subtitle: "Bringing IoT, AI, and automation technology to small and medium-sized farms in Cambodia",
+        feature1: "24/7 Monitoring",
+        feature2: "AI-Powered",
+        feature3: "Locally Hosted",
         exploreBtn: "Explore Features",
         contactBtn: "Get in Touch",
         scrollDown: "Scroll Down"
       },
       about: {
+        badge: "About Us",
         title: "Who We Are",
         heading: "Revolutionizing Agriculture in Cambodia",
         paragraph1: "Tokkatot is a student-led initiative born from a shared vision to transform Cambodia's agricultural technology sector. We're making smart automation accessible to small and medium-sized chicken farms across the country.",
@@ -28,10 +33,11 @@ const resources = {
         stat1Desc: "Cambodian-made solution",
         stat2Title: "Affordable",
         stat2Desc: "Competitive pricing",
-        stat3Title: "Student-Led",
-        stat3Desc: "Fresh perspectives"
+        stat3Title: "Customizable",
+        stat3Desc: "Tailored to your farm's needs"
       },
       features: {
+        badge: "Our Technology",
         title: "Our Technology",
         subtitle: "Four integrated systems working together to optimize your chicken farm",
         feature1Title: "Climate Control",
@@ -97,7 +103,9 @@ const resources = {
         phoneLabel: "Phone Number",
         messageLabel: "Message",
         sendBtn: "Send Message",
-        successMsg: "Thank you for your message! We will get back to you soon."
+        sendingBtn: "Sending...",
+        successMsg: "Thank you for your message! We will get back to you soon.",
+        errorMsg: "Failed to send message. Please try again or contact us directly."
       },
       footer: {
         tagline: "Empowering Cambodian farmers with smart automation technology.",
@@ -117,14 +125,19 @@ const resources = {
         contact: "ទាក់ទង"
       },
       hero: {
+        badge: "ការច្នៃប្រឌិតកសិកម្មឆ្លាតវៃ",
         title: "ការចិញ្ចឹមមាន់ឆ្លាតវៃ",
         highlight: "ងាយស្រួលប្រើប្រាស់",
         subtitle: "នាំយក បច្ចេកវិទ្យា IoT, AI និងស្វ័យប្រវត្តិកម្ម មកកាន់កសិដ្ឋានមាន់ខ្នាតតូច និងមធ្យមនៅកម្ពុជា",
+        feature1: "ត្រួតពិនិត្យ ២៤/៧",
+        feature2: "ប្រើប្រាស់ AI",
+        feature3: "ផ្ទុកក្នុងស្រុក",
         exploreBtn: "ស្វែងយល់មុខងារ",
         contactBtn: "ទាក់ទងយើង",
         scrollDown: "រំកិលចុះក្រោម"
       },
       about: {
+        badge: "អំពីយើងជំនំ",
         title: "យើងជានរណា",
         heading: "បដិវត្តកសិកម្មនៅកម្ពុជា",
         paragraph1: "Tokkatot គឺជាគំនិតផ្តួចផ្តើមដោយសិស្សនិស្សិត ដែលកើតចេញពីទស្សនវិស័យរួមគ្នា ដើម្បីផ្លាស់ប្តូរវិស័យបច្ចេកវិទ្យាកសិកម្មរបស់កម្ពុជា។ យើងធ្វើឱ្យស្វ័យប្រវត្តិកម្មឆ្លាតវៃអាចចូលប្រើបានសម្រាប់កសិដ្ឋានមាន់ខ្នាតតូច និងមធ្យមទូទាំងប្រទេស។",
@@ -133,10 +146,11 @@ const resources = {
         stat1Desc: "ដំណោះស្រាយរបស់កម្ពុជា",
         stat2Title: "តម្លៃសមរម្យ",
         stat2Desc: "តម្លៃប្រកួតប្រជែង",
-        stat3Title: "ដឹកនាំដោយសិស្ស",
-        stat3Desc: "ទស្សនវិស័យថ្មី"
+        stat3Title: "អាចកែប្រែបាន",
+        stat3Desc: "សម្រួលតាមតម្រូវការកសិដ្ឋាន"
       },
       features: {
+        badge: "បច្ចេកវិទ្យារបស់យើង",
         title: "បច្ចេកវិទ្យារបស់យើង",
         subtitle: "ប្រព័ន្ធចំនួនបួនរួមបញ្ចូលគ្នា ដើម្បីបង្កើនប្រសិទ្ធភាពកសិដ្ឋានមាន់របស់អ្នក",
         feature1Title: "ត្រួតពិនិត្យអាកាសធាតុ",
@@ -202,7 +216,9 @@ const resources = {
         phoneLabel: "លេខទូរស័ព្ទ",
         messageLabel: "សារ",
         sendBtn: "ផ្ញើសារ",
-        successMsg: "សូមអរគុណសម្រាប់សាររបស់អ្នក! យើងនឹងទាក់ទងអ្នកឆាប់ៗនេះ។"
+        sendingBtn: "កំពុងផ្ញើ...",
+        successMsg: "សូមអរគុណសម្រាប់សាររបស់អ្នក! យើងនឹងទាក់ទងអ្នកឆាប់ៗនេះ។",
+        errorMsg: "បរាជ័យក្នុងការផ្ញើសារ។ សូមព្យាយាមម្តងទៀត ឬទាក់ទងយើងដោយផ្ទាល់។"
       },
       footer: {
         tagline: "ផ្តល់អំណាចដល់កសិករកម្ពុជា ជាមួយនឹងបច្ចេកវិទ្យាស្វ័យប្រវត្តិកម្មឆ្លាតវៃ។",
@@ -222,14 +238,19 @@ const resources = {
         contact: "联系我们"
       },
       hero: {
+        badge: "智慧农业创新",
         title: "智能养鸡",
         highlight: "触手可及",
         subtitle: "为柬埔寨的中小型养鸡场带来物联网、人工智能和自动化技术",
+        feature1: "全天候监控",
+        feature2: "AI驱动",
+        feature3: "本地托管",
         exploreBtn: "探索功能",
         contactBtn: "联系我们",
         scrollDown: "向下滚动"
       },
       about: {
+        badge: "关于我们",
         title: "关于我们",
         heading: "革新柬埔寨农业",
         paragraph1: "Tokkatot 是一个由学生主导的项目，源于改变柬埔寨农业技术领域的共同愿景。我们让智能自动化技术惠及全国的中小型养鸡场。",
@@ -238,10 +259,11 @@ const resources = {
         stat1Desc: "柬埔寨制造的解决方案",
         stat2Title: "价格实惠",
         stat2Desc: "具有竞争力的价格",
-        stat3Title: "学生主导",
-        stat3Desc: "新鲜视角"
+        stat3Title: "可定制",
+        stat3Desc: "根据您的农场需求定制"
       },
       features: {
+        badge: "我们的技术",
         title: "我们的技术",
         subtitle: "四个集成系统协同工作，优化您的养鸡场",
         feature1Title: "气候控制",
@@ -307,7 +329,9 @@ const resources = {
         phoneLabel: "电话号码",
         messageLabel: "留言",
         sendBtn: "发送消息",
-        successMsg: "感谢您的消息！我们会尽快与您联系。"
+        sendingBtn: "发送中...",
+        successMsg: "感谢您的消息！我们会尽快与您联系。",
+        errorMsg: "发送消息失败。请重试或直接联系我们。"
       },
       footer: {
         tagline: "用智能自动化技术赋能柬埔寨农民。",

@@ -1,7 +1,64 @@
-# Tokkatot Website - Copilot Notes
+# Tokkatot Website - Complete Documentation
 
 ## Project Overview
-This is a React + TypeScript landing page for **Tokkatot**, a smart automation chicken farming solution for Cambodia. The project uses Vite with Rolldown for fast builds and development.
+This is a React + TypeScript landing page for **Tokkatot**, a smart automation chicken farming solution for Cambodia. The project uses Vite with Rolldown for fast builds and development, Express.js backend for API, and features a modern iOS-inspired glassmorphism design throughout.
+
+## Latest Updates (December 2025)
+
+### Major Design Overhaul
+1. **Navbar**: Redesigned with iOS-style glassmorphism
+   - Frosted glass background with 20px backdrop blur
+   - Modern button styling with equal proportions
+   - iOS segmented control for language switcher
+   - Enhanced mobile menu with glassmorphic styling
+
+2. **Features Section**: Completely redesigned
+   - Zigzag timeline layout (alternating left-right)
+   - Multi-column background image grid
+   - Smoky dark overlay for atmosphere
+   - Content elevated above background (z-index layering)
+
+3. **About Section**: Horizontal scrolling redesign
+   - Auto-scrolling card carousel on left
+   - Static visual with farm image on right
+   - Heavy smoky overlay on award_night.jpg background
+   - Glowing, bright content for 3D spatial illusion
+
+4. **Team Section**: Dark greenish theme transformation
+   - Changed from white to atmospheric dark green
+   - Floating portrait effect with yellow glowing platforms
+   - Internal smoke effect for smooth image fading
+   - Light green/white background glow for depth
+   - Removed portrait hard cuts with mask-image fading
+
+5. **Contact Section**: Modern glassmorphic redesign
+   - Chickenfarm_khmer.jpg as faded background
+   - Smoky greenish animated overlay
+   - iOS-style glassmorphism form (40px blur, 180% saturation)
+   - Animated SVG icons (email, phone, location)
+   - Interactive contact cards with hover effects
+   - Click-to-copy phone number with visual feedback
+   - Enhanced, fully-fitted input fields
+
+6. **Footer**: Consistent dark theme
+   - Dark greenish gradient background
+   - Animated social media icons with pulse effects
+   - Matching atmospheric styling
+
+7. **Language Switcher**: iOS segmented control
+   - Equal-sized buttons with min-width
+   - Glassmorphic container with backdrop blur
+   - Active state with frosted white pill
+   - Smooth animations and transitions
+
+### Technical Improvements
+- Enhanced z-index management for layering
+- Advanced CSS mask-image for edge fading
+- Complex gradient combinations (radial + linear)
+- Backdrop-filter for glassmorphism effects
+- Keyframe animations for atmospheric effects
+- Clipboard API integration for phone copy
+- Form state management with loading states
 
 ## Key Information
 
@@ -59,14 +116,15 @@ This is a React + TypeScript landing page for **Tokkatot**, a smart automation c
 ```
 src/
 ├── components/
-│   ├── Navbar.tsx/.css           - Fixed navigation with mobile menu + language switcher
-│   ├── Hero.tsx/.css             - Hero section with farmer background image & color effects
-│   ├── About.tsx/.css            - Company story and stats
-│   ├── Features.tsx/.css         - 4 feature cards + central hub
-│   ├── Team.tsx/.css             - Team showcase with scroll animations (6 members)
-│   ├── Contact.tsx/.css          - Contact info + form
-│   ├── Footer.tsx/.css           - Footer with links and SVG social icons
-│   └── LanguageSwitcher.tsx/.css - Language selector (EN/KM/ZH)
+│   ├── Navbar.tsx/.css             - Fixed navigation with mobile menu + language switcher
+│   ├── Hero.tsx/.css               - Modern hero with badges, parallax, animated scroll indicator
+│   ├── About.tsx/.css              - Company story with animated stat cards & SVG illustrations
+│   ├── Features.tsx/.css           - 4 color-coded feature cards + central hub with glassmorphism
+│   ├── AnimatedIcons.tsx/.css      - Professional animated SVG icons (5 components)
+│   ├── Team.tsx/.css               - Team showcase with scroll animations (6 members)
+│   ├── Contact.tsx/.css            - Contact form with Telegram integration & loading states
+│   ├── Footer.tsx/.css             - Footer with links and SVG social icons
+│   └── LanguageSwitcher.tsx/.css   - Language selector (EN/KM/ZH)
 ├── assets/
 │   ├── tokkatot_logo.png                      - Company logo (also used as favicon)
 │   ├── farmer_with_chicken_background_image.jpg - Hero section background
@@ -125,79 +183,229 @@ const MyComponent = () => {
 ## Component Details
 
 ### Navbar
+- **Design**: iOS-style glassmorphism with frosted glass effect
+- **Background**: `rgba(255, 255, 255, 0.7)` with 20px backdrop blur
+- **Features**: 
+  - Equal-sized nav buttons with consistent padding (0.625rem × 1.25rem)
+  - Hover effects: lift animation + glassmorphic background
+  - Mobile hamburger menu with full glassmorphic overlay
+  - Sticky positioning with enhanced shadow on scroll
 - **State**: `isScrolled` prop from parent, `mobileMenuOpen` local state
-- **Features**: Smooth scroll to sections, mobile hamburger menu
-- **Logo Import**: `import tokkatotLogo from '../assets/tokkatot_logo.png'`
+- **Logo**: `tokkatot_logo.png` at 40px height
+
+### Language Switcher
+- **Design**: iOS segmented control style
+- **Container**: Glassmorphic background with backdrop blur
+- **Buttons**: 
+  - Min-width: 60px for equal sizing
+  - Active state: frosted white pill with shadow
+  - Smooth transitions and hover lift effects
+- **Implementation**: Each button has `::before` pseudo-element for pill effect
 
 ### Hero
-- **Background**: Farmer with chicken image with parallax effect (fixed attachment)
-- **Color Overlays**: Multi-layered gradients using brand colors (teal, gold, coral) with animated glow
-- **Content Card**: Glassmorphism container with backdrop blur for hero text
-- **Key Elements**: Scroll indicator with bounce animation, gradient overlays, animated radial glows
-- **CTAs**: "Explore Features" (secondary-color) and "Get in Touch" (white border)
-- **Effects**: Gold text-shadow on highlights, overlay blend mode on dots pattern
+- **Background**: Farmer with chicken image with parallax particles effect
+- **Modern Elements**: 
+  - Feature badge with glassmorphism and shimmer animation
+  - Quick features inline (24/7 Monitoring, AI-Powered, Locally Hosted) with icons
+  - Animated gradient text effects on headings
+  - Interactive buttons with ripple effects and animated underlines
+  - Animated scroll indicator with mouse icon and pulsing animations
+- **CTAs**: "Explore Features" (gradient primary) and "Contact Us" (glass border)
+- **Effects**: 
+  - Parallax background with floating particles
+  - Glassmorphism cards with backdrop blur
+  - Gradient text animations (shimmer, pulse)
+  - Button hover effects (lift, ripple, underline expand)
+  - Scroll mouse animation (wheel scroll + bounce)
 
 ### About
-- **Layout**: Two-column grid (text + placeholder image)
-- **Stats**: 3 stat items with emoji icons
-- **Responsive**: Single column on mobile
+- **Layout**: Horizontal split - scrolling cards (left) + static visual (right)
+- **Scrolling Cards**: 
+  - Auto-scrolling carousel with infinite loop
+  - Each card has glassmorphic styling
+  - Smooth animation with CSS transforms
+- **Static Visual**: 
+  - Right side with our_testing.JPG image
+  - Heavy smoky overlay for atmospheric effect
+  - Glowing content for 3D spatial depth
+- **Background**: award_night.jpg with heavy smoky greenish overlay
+- **Effects**: Bright, glowing text and cards appear to float above dark background
 
 ### Features
-- **Grid**: Auto-fit grid with 280px minimum
+- **Layout**: Zigzag timeline (alternating left-right)
+- **Background**: Multi-column grid of chicken farm images
+  - Images: award_night.jpg, chickenfarm_khmer.jpg, our_testing.jpg, etc.
+  - Dark smoky overlay for cohesion
+  - Lower z-index to keep content sharp
 - **Animation**: Intersection Observer for fade-in on scroll
-- **Icons**: Custom SVG icons per feature (color-coded)
-- **Central Hub**: Special section with gradient background
+- **Icons**: Professional animated SVG icons (AnimatedIcons.tsx)
+  - ClimateControlIcon: Thermometer with rising mercury animation
+  - AutoFeedingIcon: Rotating dispenser with falling particles
+  - ManureConveyorIcon: Moving conveyor belt animation
+  - AIDiseaseDetectionIcon: Scanning beam with neural network nodes
+  - CentralHubIcon: Expanding connectivity waves
+- **Color Coding**:
+  - Climate Control: Primary (#20A39E) - Teal
+  - Auto Feeding: Secondary (#FFBA49) - Gold  
+  - Manure Conveyor: Accent (#EF5B5B) - Coral
+  - AI Disease Detection: Purple gradient
+- **Card Effects**:
+  - Glassmorphism with backdrop blur
+  - Hover lift animation (translateY -10px)
+  - Color-coded borders that expand on hover
+  - Glow effects matching icon colors
+- **Content Z-index**: Set to 5 to stay above background images
 
 ### Team
-- **Layout**: Alternating left/right grid layout for visual interest
-- **Background**: Chicken background image with parallax (fixed attachment) and color overlay
-- **Members**: 6 co-founders with transparent portrait PNGs
-- **Animation**: Scroll-based reveal - images become clearest when centered on screen
-- **Effects**: 
-  - Glassmorphism cards with backdrop-filter blur and multi-layered shadows
-  - Pulsing glow halos around portraits (5s animation with rotation)
-  - Animated gradient timeline down center (teal → gold → coral)
-  - Hover effects: card lift, image scale+lift, border glow, underline expand
-  - Gradient fade at portrait bottom to hide cut-off (follows image on hover)
-- **Styling**: Enhanced with gradients, decorative elements, and smooth transitions
+- **Theme**: Dark greenish atmospheric design
+- **Background**: Chicken background with parallax + dark green gradient overlay
+- **Layout**: Alternating left/right grid for visual interest
+- **Members**: 6 co-founders with portrait images
+- **Portrait Effects**:
+  - Floating appearance on yellow glowing platforms
+  - Internal smoke effect (bottom 45%, fades at edges with mask-image)
+  - Light green/white radial gradient glow behind image
+  - Yellow platform bar at bottom (100% width, 8px height)
+  - Smooth edge fading with linear gradient masks
+- **Cards**: 
+  - Glassmorphism with backdrop blur
+  - Dark teal/green background (rgba(20, 40, 39, 0.6))
+  - Enhanced text contrast with white color
+- **Hover Effects**: 
+  - Portrait lift and scale
+  - Smoke effect translation
+  - Card shadow enhancement
 - **Team Members**:
-  1. Yung Sreyneang - Co-Founder & CEO (Media/PR, executive decisions)
-  2. Preap Somanith - Co-Founder & CTO (Technical decisions, embedded systems)
-  3. Sophea Darika - COO (Operations, admin, R&D, frontend dev)
-  4. Virak Rangsey - Co-Founder & CFO (Financial planning, business dev)
-  5. Sun Heng - Co-Founder & AI Engineer (R&D hardware/systems, AI, frontend)
+  1. Yung Sreyneang - Co-Founder & CEO
+  2. Preap Somanith - Co-Founder & CTO
+  3. Sophea Darika - COO
+  4. Virak Rangsey - Co-Founder & CFO
+  5. Sun Heng - Co-Founder & AI Engineer
   6. Kaem Sreyneath - Co-Founder & Embedded Systems Engineer
 
 ### Contact
-- **Form State**: Managed with React useState
-- **Validation**: HTML5 required attributes
-- **TODO**: Backend integration needed (currently logs to console)
+- **Background**: chickenfarm_khmer.jpg with smoky greenish overlay
+  - Animated smoky flow effect (15s infinite)
+  - Radial gradients for atmospheric depth
+- **Form Design**: Premium iOS glassmorphism
+  - Background: `rgba(20, 40, 39, 0.4)` with 40px backdrop blur
+  - Enhanced shadow and border for depth
+  - Gradient border effect with pseudo-element
+- **Contact Cards**: Interactive glassmorphic cards
+  - Glassmorphic background matching form
+  - Animated SVG icons (email, phone, location)
+  - Hover effects: slide right, glow, lift
+  - Email: Opens mailto link
+  - Phone: Copies to clipboard with "Copied!" notification
+  - Location: Static display
+- **Form Fields**: 
+  - Larger padding (1rem × 1.25rem)
+  - Enhanced font size (1.05rem)
+  - White text on dark glassmorphic background
+  - Yellow glow on focus
+  - Proper box-sizing for full width
+  - Textarea: 150px minimum height
+- **State Management**: 
+  - `formData` for input values
+  - `isSubmitting` for loading state
+  - `submitStatus` for success/error messages
+  - `phoneCopied` for clipboard feedback
+- **API Integration**: 
+  - POST to `/api/telegram`
+  - Telegram Bot sends to group's "Messages" topic
+  - Modern glassmorphic submit button with:
+    - Gradient background with blur effect
+    - Shimmer animation on hover
+    - Professional SVG icons (no emojis)
+    - Color states: Gold (ready) → Teal (sending)
+    - Smooth cubic-bezier transitions
+  - Status messages with glassmorphic cards and slide-down animation
+  - Loading spinner and success/error alerts
 
 ### Footer
-- **Sections**: Company info, quick links, social links
-- **Styling**: Dark background with secondary-color headings
-- **Social Icons**: Custom SVG icons for Facebook (active) and LinkedIn (coming soon)
-- **Links**: Smooth scroll navigation to all sections including Team
+- **Design**: Dark greenish theme matching site
+- **Background**: Linear gradient (#0a1d1d to #0d2626)
+- **Effects**: 
+  - Glowing top border (green gradient)
+  - Radial gradient overlays for atmosphere
+- **Social Links**: 
+  - Glassmorphic circular buttons
+  - Animated pulse effect on hover
+  - Gradient glow animation
+  - Facebook (active), LinkedIn (coming soon)
+- **Layout**: Three columns - company info, quick links, social
+- **Styling**: Consistent with overall dark greenish aesthetic
 
-## TechnKontumruy Font?
-- **Khmer Support**: Designed specifically for Khmer script with excellent readability
-- **Multi-script**: Works well with Latin (English) and Chinese characters
-- **Professional**: Modern, clean appearance suitable for tech companies
-- **Google Fonts**: Easy to implement and free to use
+## CSS Techniques & Modern Features
 
-### Why i18next?
-- **Industry Standard**: Most popular i18n library for React
-- **Lightweight**: Minimal bundle size impact
-- **Flexible**: Easy to add more languages in the future
-- **React Integration**: Seamless hooks-based API
-- **No Backend Required**: Translations embedded in app (can move to separate files later)
+### Glassmorphism Implementation
+```css
+/* iOS-style frosted glass */
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+border: 1px solid rgba(255, 255, 255, 0.3);
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+```
 
-### Why ical Decisions
+### Edge Fading with Mask
+```css
+/* Smooth edge fading for images */
+mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+```
 
-### Why Vite + React + TypeScript?
-- **Vite**: Lightning-fast HMR and optimized builds
-- **React**: Component reusability, potential for future expansion (dashboard, auth)
-- **TypeScript**: Type safety, better IDE support, fewer runtime errors
+### Z-Index Layering Strategy
+```
+Layer 5: Content (text, cards, buttons)
+Layer 3: Floating elements (platforms, badges)
+Layer 2: Overlays (smoke, gradients)
+Layer 1: Images (portraits, backgrounds)
+Layer 0: Base backgrounds
+Layer -1: Glow effects behind elements
+```
+
+### Multi-Layer Backgrounds
+```css
+background: 
+    linear-gradient(overlay gradient),
+    radial-gradient(atmospheric glow),
+    url('background-image.jpg');
+```
+
+### Animated Atmospheric Effects
+```css
+@keyframes smokyFlow {
+    0%, 100% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0.8; transform: translateY(-10px); }
+}
+```
+
+### Hover Lift Pattern
+```css
+.element {
+    transition: all 0.3s ease;
+}
+.element:hover {
+    transform: translateY(-2px);
+    box-shadow: enhanced shadow;
+}
+```
+
+### Glassmorphic Borders
+```css
+/* Gradient border effect with pseudo-element */
+.element::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+```
 
 ### Dependencies
 ```json
@@ -205,7 +413,10 @@ const MyComponent = () => {
   "react": "^19.2.0",
   "react-dom": "^19.2.0",
   "i18next": "^23.x",
-  "react-i18next": "^14.x"
+  "react-i18next": "^14.x",
+  "express": "^4.18.2",
+  "cors": "^2.8.5",
+  "dotenv": "^16.3.1"
 }
 ```
 - Currently using local component state (useState)
@@ -222,10 +433,20 @@ const MyComponent = () => {
 
 ### Running the Project
 ```bash
-npm run dev      # Start dev server (http://localhost:5173)
-npm run build    # Build for production
-npm run preview  # Preview production build
+npm run dev      # Start Vite dev server (http://localhost:5173)
+npm run build    # Build React app for production (outputs to dist/)
+npm start        # Start Express production server (serves dist/ + API)
+npm run server   # Alias for npm start
 ```
+
+### Production Server (Express)
+- Serves built React app from `/dist` folder
+- API endpoints:
+  - `POST /api/telegram` - Contact form submissions
+  - `GET /api/telegram/test` - Test Telegram connection
+  - `GET /api/health` - Server health check
+- Default port: 3000 (configurable via PORT env variable)
+- Uses PM2 for process management in production
 
 ### Browser Support
 - Modern browsers (Chrome, Firefox, Safari, Edge)
@@ -240,11 +461,11 @@ npm run preview  # Preview production build
 ## Future Enhancements
 
 ### High Priority
-1. **Backend Integration**: Connect contact form to email service or API
-2. **Team Member Links**: Add LinkedIn/social profiles to team member cards
-3. **Video Background**: Consider video backgrounds for Hero/Team sections
-4. **Testimonials**: Add section with farmer testimonials
-5. **Case Studies**: Showcase successful implementations
+1. **Team Member Links**: Add LinkedIn/social profiles to team member cards
+2. **Video Background**: Consider video backgrounds for Hero/Team sections
+3. **Testimonials**: Add section with farmer testimonials
+4. **Case Studies**: Showcase successful implementations
+5. **Rate Limiting**: Add rate limiting to contact form API to prevent spam
 
 ### Medium Priority (track language usage)
 2. **Chat Widget**: Live chat for immediate support (multilingual)
@@ -269,94 +490,126 @@ npm run preview  # Preview production build
 - Optimize images (WebP format, proper sizing)
 - Add robots.txt
 
+## Backend Integration (Telegram Bot) ✅
+
+### Status: CONFIGURED AND TESTED
+- **Bot**: @tokkatot_pigeon_bot
+- **Target**: Tokkatot Team → Messages topic
+- **Test Status**: ✅ Passed
+
+### Architecture
+- **Server**: Express.js (server.js)
+- **Deployment**: Home server with Cloudflare (DNS, CDN, SSL, DDoS protection)
+- **Process Manager**: PM2 for production (auto-restart, logging, monitoring)
+- **Environment**: `.env` file for sensitive configuration (not committed to Git)
+
+### Configuration (COMPLETED)
+The Telegram bot is fully configured with:
+- Bot Token: ✅ Configured in `.env`
+- Chat ID: ✅ Configured in `.env`
+- Topic ID: 10431 (Messages topic)
+
+### Development Configuration
+**Vite Proxy Setup** (vite.config.ts):
+```typescript
+server: {
+  proxy: {
+    '/api': {
+      target: 'http://localhost:3000',
+      changeOrigin: true,
+    }
+  }
+}
+```
+This forwards API requests from Vite dev server (5173) to Express backend (3000).
+
+**For Deployment**: Simply copy the `.env` file to production server.
+
+### API Implementation
+- **Endpoint**: `POST /api/telegram`
+- **Method**: Direct HTTPS request to Telegram Bot API (no external libraries)
+- **Format**: Markdown-formatted message with emoji icons
+- **Response**: JSON with success/error status
+- **Error Handling**: Graceful degradation with user-friendly messages
+
+### Message Format
+```
+🔔 New Contact Form Submission
+
+👤 Name: [name]
+📧 Email: [email]
+📱 Phone: [phone]
+
+💬 Message:
+[message]
+
+🕐 Time: [timestamp]
+🌐 Source: Tokkatot Website
+```
+
+### Security
+- Environment variables for sensitive data
+- CORS configured for production domain
+- Bot token never exposed to client
+- HTTPS enforced via Cloudflare
+
 ## Contact Information
 Official contact details:
-- **Email**: tokkatot@outlook.com
-- **Phone**: +855 61 747 269
+- **Email**: tokkatot.info@gmail.com
+- **Phone**: +855 61 747 269 (click-to-copy on website)
 - **CEO**: Yung Sreyneang
 - **Location**: Phnom Penh, Cambodia
 - **Social Media**: 
   - Facebook: https://www.facebook.com/profile.php?id=61562440490014
   - LinkedIn: Coming Soon
 
-## IMultilingual Content
-- All user-facing text uses translation keys (t('key'))
-- To add new language: Add to `resources` object in `i18n.ts`
-- Translation keys are organized by section for easy maintenance
-- Khmer translations use proper Unicode Khmer script
-- Chinese uses Simplified Chinese (可以改为繁体中文 if needed)- **Font Switching**: Automatic based on language - App.tsx updates `html[lang]` attribute, CSS applies appropriate font
-### Language Switcher
-- Desktop: Displays horizontally in navbar next to navigation links
-- Mobile: Displays in mobile menu below navigation items
-- Active language highlighted with primary color background
-- Buttons show native script (EN, ខ្មែរ, 中文) for clarity
+## Key Image Assets
 
-### mportant Notes for Future Development
+### Background Images
+- `farmer_with_chicken_background_image.jpg` - Hero section
+- `chickenfarm_khmer.jpg` - Contact section background + Features grid
+- `award_night.jpg` - About section background + Features grid
+- `chicken_background_image.jpg` - Team section (deprecated, now using gradient)
+- `our_testing.JPG` - About section right side + Features grid
+
+### Team Portraits
+- `yung_sreyneang.png` - CEO
+- `preap_somanith.png` - CTO
+- `sophea_darika.png` - COO
+- `virak_rangsey.png` - CFO
+- `sun_heng.png` - AI Engineer
+- `kaem_sreyneath.png` - Embedded Systems Engineer
 
 ### Logo & Branding
-- Logo file: `src/assets/tokkatot_logo.png`
-- Imported in Navbar component (Height: 40px)
-- Used as favicon in index.html
-- Page title: "Tokkatot - Smart Chicken Farming"
+- `tokkatot_logo.png` - Used in navbar and as favicon
 
-### Color Usage Guidelines
-- Primary (#20A39E): Main headings, icons, hover states
-- Secondary (#FFBA49): CTAs, important highlights
-- Accent (#EF5B5B): Alerts, disease detection icon
-- Use CSS variables consistently
+## Design Philosophy
 
-### Form Submission
-The contact form currently:
-1. Prevents default submission
-2. Logs data to console
-3. Shows browser alert
-4. Resets form
+### Color Psychology
+- **Teal (#20A39E)**: Trust, technology, innovation
+- **Gold (#FFBA49)**: Premium quality, success, energy
+- **Coral (#EF5B5B)**: Urgency, attention, warmth
+- **Dark Green Background**: Natural, sustainable, professional
 
-**TODO**: Implement actual backend
-- Options: Formspree, EmailJS, custom API endpoint
-- Add loading state during submission
-- Add success/error toast notifications
-- Consider CAPTCHA for spam prevention
+### Visual Hierarchy
+1. **Bright glowing content** on dark backgrounds (3D spatial illusion)
+2. **Glassmorphism** for modern premium feel
+3. **Animated elements** for engagement and interactivity
+4. **Consistent spacing** and proportions throughout
 
-### Responsive Breakpoints
-- Mobile: 0-640px
-- Tablet: 641-968px
-- Desktop: 969px+
-
-### Animation Timings
-- Page transitions: 0.3s ease
-- Hover effects: 0.3s ease
-- Scroll animations: 0.6s ease with staggered delays
-- Bounce animation: 2s infinite
-
-## Deployment Recommendations
-
-### Build Output
-```bash
-npm run build
-# Outputs to: dist/
-```
-
-
-## Maintenance
-
-### Regular Updates
-- Keep dependencies updated (`npm update`)
-- Monitor security vulnerabilities (`npm audit`)
-- Test on different devices and browsers
-- Backup before major changes
-
-### Content Updates
-Most content can be updated directly in component files:
-- Hero text: `Hero.tsx`
-- About content: `About.tsx`
-- Features: `Features.tsx` (featuresData array)
-- Contact info: `Contact.tsx`
+### Animation Principles
+- **Subtle and purposeful**: Enhance UX without distraction
+- **Performance-first**: GPU-accelerated transforms
+- **Accessible**: Respects user motion preferences
+- **Consistent timing**: 0.3s for most transitions
 
 ---
 
-**Last Updated**: December 22, 2025
-**Version**: 1.0.0
-**Tech Stack**: React 19.2, TypeScript 5.9, Vite 7.2 (Rolldown), i18next
+**Last Updated**: December 24, 2025
+**Version**: 2.1.0
+**Tech Stack**: React 19.2, TypeScript 5.9, Vite 7.2, Express 4.18, i18next
 **Sections**: Navbar, Hero, About, Features, Team, Contact, Footer
 **Languages**: English, Khmer (ខ្មែរ), Chinese (中文)
+**Design**: iOS-inspired glassmorphism with dark greenish atmospheric theme
+**Features**: Animated SVG icons, Telegram bot, click-to-copy phone, horizontal carousel, zigzag timeline
+**Deployment**: Home server + Cloudflare with PM2 process management

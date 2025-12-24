@@ -1,0 +1,419 @@
+/* Animated Icons Styles */
+
+.animated-icon {
+  filter: drop-shadow(0 4px 12px rgba(32, 163, 158, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .animated-icon {
+  transform: scale(1.1);
+}
+
+/* Climate Control Animations */
+.mercury-fill {
+  animation: mercuryRise 2s ease-in-out infinite alternate;
+}
+
+.thermo-bulb {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.heat-wave {
+  animation: waveFloat 2s ease-in-out infinite;
+}
+
+.wave-1 {
+  animation-delay: 0s;
+}
+
+.wave-2 {
+  animation-delay: 0.3s;
+}
+
+.droplet {
+  animation: dropletFall 3s ease-in-out infinite;
+}
+
+.droplet-1 {
+  animation-delay: 0s;
+}
+
+.droplet-2 {
+  animation-delay: 1.5s;
+}
+
+@keyframes mercuryRise {
+  0% {
+    stroke-dasharray: 0, 20;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 20, 20;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes waveFloat {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+}
+
+@keyframes dropletFall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+/* Auto Feeding Animations */
+.feed-particle {
+  animation: particleFall 2s ease-in infinite;
+}
+
+.particle-1 {
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  animation-delay: 0.4s;
+}
+
+.particle-3 {
+  animation-delay: 0.8s;
+}
+
+.particle-4 {
+  animation-delay: 1.2s;
+}
+
+.dispenser-mechanism {
+  transform-origin: 40px 25px;
+  animation: rotate 4s linear infinite;
+}
+
+.water-drop {
+  animation: dropPulse 2s ease-in-out infinite;
+}
+
+.drop-1 {
+  animation-delay: 0s;
+}
+
+.drop-2 {
+  animation-delay: 1s;
+}
+
+@keyframes particleFall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dropPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Manure Conveyor Animations */
+.pulley {
+  transform-origin: center;
+  animation: rotatePulley 3s linear infinite;
+}
+
+.belt-segment {
+  animation: beltMove 3s linear infinite;
+}
+
+.segment-1 {
+  animation-delay: 0s;
+}
+
+.segment-2 {
+  animation-delay: 1s;
+}
+
+.segment-3 {
+  animation-delay: 2s;
+}
+
+.sparkle {
+  animation: sparkleShine 1.5s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  animation-delay: 0.75s;
+}
+
+@keyframes rotatePulley {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes beltMove {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkleShine {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* AI Disease Detection Animations */
+.scan-beam {
+  animation: scanMove 3s ease-in-out infinite;
+}
+
+.neural-nodes .node {
+  animation: nodePulse 2s ease-in-out infinite;
+}
+
+.node-1 {
+  animation-delay: 0s;
+}
+
+.node-2 {
+  animation-delay: 0.2s;
+}
+
+.node-3 {
+  animation-delay: 0.4s;
+}
+
+.node-4 {
+  animation-delay: 0.6s;
+}
+
+.node-5 {
+  animation-delay: 0.8s;
+}
+
+.detection-bars {
+  animation: barsGrow 2s ease-in-out infinite;
+}
+
+.alert-pulse {
+  animation: alertPulse 2s ease-in-out infinite;
+}
+
+@keyframes scanMove {
+  0%, 100% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes barsGrow {
+  0%, 100% {
+    stroke-dasharray: 0, 20;
+  }
+  50% {
+    stroke-dasharray: 20, 20;
+  }
+}
+
+@keyframes alertPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+/* Central Hub Animations */
+.signal-wave {
+  animation: waveExpand 3s ease-out infinite;
+}
+
+.wave-1 {
+  animation-delay: 0s;
+}
+
+.wave-2 {
+  animation-delay: 0.5s;
+}
+
+.wave-3 {
+  animation-delay: 1s;
+}
+
+.connected-node {
+  animation: nodeConnect 2s ease-in-out infinite;
+}
+
+.node-1 {
+  animation-delay: 0s;
+}
+
+.node-2 {
+  animation-delay: 0.5s;
+}
+
+.node-3 {
+  animation-delay: 1s;
+}
+
+.node-4 {
+  animation-delay: 1.5s;
+}
+
+.connection-line {
+  animation: dashFlow 2s linear infinite;
+}
+
+.data-packet {
+  animation: packetMove 4s linear infinite;
+}
+
+.packet-1 {
+  animation: packetMove1 4s linear infinite;
+}
+
+.packet-2 {
+  animation: packetMove2 4s linear infinite;
+}
+
+@keyframes waveExpand {
+  0% {
+    opacity: 0.6;
+    stroke-width: 2;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    stroke-width: 1;
+  }
+}
+
+@keyframes nodeConnect {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+@keyframes packetMove1 {
+  0% {
+    offset-distance: 0%;
+  }
+  25% {
+    offset-distance: 100%;
+  }
+  26%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes packetMove2 {
+  0%, 49% {
+    opacity: 0;
+  }
+  50% {
+    offset-distance: 0%;
+    opacity: 1;
+  }
+  75% {
+    offset-distance: 100%;
+    opacity: 1;
+  }
+  76%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}

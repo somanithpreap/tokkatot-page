@@ -1,4 +1,4 @@
-# Stage 1: Build the application
+# Stage 1: Build the React application
 FROM node:20-alpine AS builder
 
 # Set working directory
@@ -7,37 +7,42 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install ALL dependencies (needed for build)
+RUN npm ci
 
 # Copy source code
 COPY . .
 
-# Build the application
+# Build the React application
 RUN npm run build
 
-# Stage 2: Serve with nginx
-FROM nginx:alpine
+# Stage 2: Production server with Node.js and Express
+FROM node:20-alpine
 
-# Copy built files from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+# Set working directory
+WORKDIR /app
 
-# Copy nginx configuration (optional - creates a custom config)
-RUN echo 'server { \
-    listen 80; \
-    server_name localhost; \
-    root /usr/share/nginx/html; \
-    index index.html; \
-    location / { \
-    try_files $uri $uri/ /index.html; \
-    } \
-    # Enable gzip compression \
-    gzip on; \
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript; \
-    }' > /etc/nginx/conf.d/default.conf
+# Copy package files
+COPY package*.json ./
 
-# Expose port 80
-EXPOSE 80
+# Install only production dependencies
+RUN npm ci --only=production
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Copy built React app from builder stage
+COPY --from=builder /app/dist ./dist
+
+# Copy server file
+COPY server.js .
+
+# Create .env file placeholder (will be mounted via docker-compose)
+RUN touch .env
+
+# Expose port 3000
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000/api/health', (res) => process.exit(res.statusCode === 200 ? 0 : 1))"
+
+# Start the Express server
+CMD ["node", "server.js"]
